@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    image: chenzhaoyu94/chatgpt-web # 总是使用 latest ,更新时重新 pull 该 tag 镜像即可
+    ports:
+      - 127.0.0.1:1998:3003
+    environment:
+      # 二选一
+      OPENAI_API_KEY: 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
+      # API模型，可选，设置 OPENAI_API_KEY 时可用，https://platform.openai.com/docs/models
+      # gpt-4, gpt-4-0314, gpt-4-32k, gpt-4-32k-0314, gpt-3.5-turbo, gpt-3.5-turbo-0301, text-davinci-003, text-davinci-002, code-davinci-002
+      OPENAI_API_MODEL: text-davinci-003
+
